@@ -75,7 +75,7 @@ export default function App() {
   }
   const deleteData = async (url, id) => {
     try{
-      await axios.delete(url+'/'+id);
+      await axios.delete(url+'/'+id); //http:localhost:3001/toDoList/:id
     }catch(err){
       console(err)
     }
@@ -115,7 +115,7 @@ export default function App() {
 
   const deleteTodo = async(id) => {
     try{
-      await deleteData(toDoUrl, id)
+      await deleteData(toDoUrl, id);
       //Delete data from state
       const newToDo = toDoList.filter(todo => todo.id !== id);
       setToDoList(newToDo);

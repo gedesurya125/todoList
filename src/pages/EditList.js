@@ -36,12 +36,12 @@ const EditList = ({toDoList, updateData}) => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     await updateData(todoData);
-    history.push("/");
+    history.push("/"); // kembali ke halaman awal;
   }
 
   useEffect(() => {
     const dataToEdit = toDoList.find((todo => todo.id === params.id));
-    if(!dataToEdit) return alert("No Data Matched");
+    if(!dataToEdit) return alert("No Data Matched"); //prevent error
     setTodoData({
       id: dataToEdit.id,
       title: dataToEdit.title,
